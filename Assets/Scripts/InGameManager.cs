@@ -38,7 +38,16 @@ public class InGameManager : MonoBehaviour, IBulletHittable
     public void StealProcess()
     {
         targetManager = currentTargetObject.GetComponentInChildren<InGameManager>();
-        var StolenItem = targetManager.StolenProcess(this.gameObject);
+        var StolenItem = targetManager.StolenProcess(gameObject);
+        try{
+            itemCounts[StolenItem] = 1;
+            Stolen = StolenItem;
+        }
+        catch
+        {
+            Debug.LogError("Player stolen invalid item or other error");
+        }
+
 
     }
     public string StolenProcess(GameObject sender)
@@ -81,9 +90,9 @@ public class InGameManager : MonoBehaviour, IBulletHittable
         }
         if (processedAction == "Reload")
         {
-            itemCounts["Lazer"] = 1;
-            itemCounts["Shield"] = 1;
-            itemCounts["Reflect"] = 1;
+        itemCounts["Lazer"] = Mathf.Max(itemCounts["Lazer"], 1);
+        itemCounts["Shield"] = Mathf.Max(itemCounts["Shield"], 1);
+        itemCounts["Reflect"] = Mathf.Max(itemCounts["Reflect"], 1);
             
             if (Stolen != "None")
             {
@@ -247,7 +256,7 @@ public class InGameManager : MonoBehaviour, IBulletHittable
             }
             else if (bulletType == "Multi-Reflected")
             {
-                Debug.Log($"{this.gameObject.name} reflected a {bulletType} lazer too many times to count, at {currentTargetObject.name}");
+                Debug.Log($"{this.gameObject.name} reflected a {bulletType} lazer reflected too many times to count, at {currentTargetObject.name}");
                 StartCoroutine(Fire("Multi-Reflected", originalSender));
             }
                 Debug.Log($"{this.gameObject.name} reflected a {bulletType} lazer from {sender.name} at {currentTargetObject.name}!");
