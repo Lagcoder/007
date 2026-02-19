@@ -1572,6 +1572,7 @@ GameObject:
   - component: {fileID: 1658774761}
   - component: {fileID: 1658774760}
   - component: {fileID: 1658774763}
+  - component: {fileID: 1658774764}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -1588,7 +1589,7 @@ Transform:
   m_GameObject: {fileID: 1658774758}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -0.061592497}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1922,11 +1923,52 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2ca5bcfc-2fab-4432-bf28-bd16385522c0
     m_ActionName: 'Player/Facing2[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 691b1232-568b-4673-b3a3-165eaa6fdeca
+    m_ActionName: 'Player/AltSteal[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1ca56580-cfc8-48db-b9db-0504263a2f38
+    m_ActionName: 'Player/MousePos[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 40c825a7-7883-46ad-90d5-b01fa9721d2c
+    m_ActionName: 'Player/NudgeLeft2[/Keyboard/leftArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 232a96df-fd83-408c-a7e8-b05f0c61d8ab
+    m_ActionName: 'Player/NudgeRight2[/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9aaccec7-9874-455d-80da-f0c2719fae45
+    m_ActionName: 'Player/ToggleAim2[/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6a5c67a4-5212-4d48-950a-7c911eef78fc
+    m_ActionName: 'Player/ResetAim2[/Keyboard/upArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1658774764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658774758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcc51cbf26b72d4e8f9c13e64798d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetSystem
+  rayDistance: 4
+  originOffset: 2
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 19
 --- !u!1 &1747671898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,6 +1982,7 @@ GameObject:
   - component: {fileID: 1747671903}
   - component: {fileID: 1747671902}
   - component: {fileID: 1747671904}
+  - component: {fileID: 1747671905}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Untagged
@@ -1956,7 +1999,7 @@ Transform:
   m_GameObject: {fileID: 1747671898}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 1.51, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2194,11 +2237,52 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2ca5bcfc-2fab-4432-bf28-bd16385522c0
     m_ActionName: 'Player/Facing2[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 691b1232-568b-4673-b3a3-165eaa6fdeca
+    m_ActionName: 'Player/AltSteal[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1ca56580-cfc8-48db-b9db-0504263a2f38
+    m_ActionName: 'Player/MousePos[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 40c825a7-7883-46ad-90d5-b01fa9721d2c
+    m_ActionName: 'Player/NudgeLeft2[/Keyboard/leftArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 232a96df-fd83-408c-a7e8-b05f0c61d8ab
+    m_ActionName: 'Player/NudgeRight2[/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9aaccec7-9874-455d-80da-f0c2719fae45
+    m_ActionName: 'Player/ToggleAim2[/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6a5c67a4-5212-4d48-950a-7c911eef78fc
+    m_ActionName: 'Player/ResetAim2[/Keyboard/upArrow]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player 2
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1747671905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747671898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcc51cbf26b72d4e8f9c13e64798d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetSystem
+  rayDistance: 8
+  originOffset: 1
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 19
 --- !u!1 &1852021576
 GameObject:
   m_ObjectHideFlags: 0

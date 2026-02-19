@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "InputSystem_Actions",
     "maps": [
         {
@@ -96,6 +97,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "AltSteal",
+                    "type": "Button",
+                    "id": "691b1232-568b-4673-b3a3-165eaa6fdeca",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Bomb",
                     "type": "Button",
                     "id": "42088ba3-6c97-4a21-afd4-2babcef8ec13",
@@ -180,10 +190,55 @@
                     "name": "Facing2",
                     "type": "Value",
                     "id": "2ca5bcfc-2fab-4432-bf28-bd16385522c0",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MousePos",
+                    "type": "Value",
+                    "id": "1ca56580-cfc8-48db-b9db-0504263a2f38",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "NudgeLeft2",
+                    "type": "Button",
+                    "id": "40c825a7-7883-46ad-90d5-b01fa9721d2c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NudgeRight2",
+                    "type": "Button",
+                    "id": "232a96df-fd83-408c-a7e8-b05f0c61d8ab",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleAim2",
+                    "type": "Button",
+                    "id": "9aaccec7-9874-455d-80da-f0c2719fae45",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ResetAim2",
+                    "type": "Button",
+                    "id": "6a5c67a4-5212-4d48-950a-7c911eef78fc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -388,7 +443,7 @@
                 {
                     "name": "",
                     "id": "8e07d4d7-9988-456c-9ecc-045fefa648d9",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -837,114 +892,103 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "6e04ff95-85be-4836-a6b6-07f0f18f9a91",
-                    "path": "2DVector",
-                    "interactions": "Hold",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Facing2",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "3c946572-9a7b-49b0-93b7-c7f43d4ede27",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Facing2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "57e30f8e-00f9-48a4-85cb-bc3efc95c438",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Facing2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "b9acf270-527c-46cb-8fb7-69db9e6c1854",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Facing2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "36354ef6-7e08-4ac7-b12b-2101674709ab",
-                    "path": "<Gamepad>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Facing2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "2D Vector",
-                    "id": "af532a10-abc9-4c8e-b33b-45a7e152ab0f",
-                    "path": "2DVector",
-                    "interactions": "Hold",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Facing2",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "1360f718-f395-40d7-97d6-4fde4cd561c0",
-                    "path": "<Keyboard>/upArrow",
+                    "name": "",
+                    "id": "06eb3521-07c7-4829-aaf8-87039596019b",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Facing2",
+                    "action": "MousePos",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "down",
-                    "id": "1036c0cd-90fc-4254-acf8-2f8976b59fc4",
+                    "name": "",
+                    "id": "035bc438-d02f-452e-b582-3206df3ddbd8",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "AltSteal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "611872b3-4a2e-4ea4-8173-62f780271ca0",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "AltSteal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5fa9edf2-7490-4892-88f6-7d3cf9fc7dac",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Keyboard&Mouse",
+                    "action": "NudgeLeft2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a427281a-d791-4f2c-9209-fba2f8d97e06",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Keyboard&Mouse",
+                    "action": "NudgeRight2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab7b67a9-c68a-4776-8107-ee0fc8f6b0f9",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Facing2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c05c461-a7af-4268-b2a8-30be406926d9",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Facing2",
+                    "action": "ToggleAim2",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "left",
-                    "id": "2f73b57c-8e82-4b9b-b028-c10c288eeb8c",
-                    "path": "<Keyboard>/leftArrow",
+                    "name": "",
+                    "id": "9b69f179-8a2a-4ad5-971b-06b30b7308e1",
+                    "path": "<Gamepad>/leftStickPress",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Facing2",
+                    "groups": ";Gamepad",
+                    "action": "ToggleAim2",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "right",
-                    "id": "3e563028-04de-4fae-b191-e310f5a5b132",
-                    "path": "<Keyboard>/rightArrow",
+                    "name": "",
+                    "id": "ed4a714c-5d3c-42c6-8b9d-521329130175",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Facing2",
+                    "groups": "",
+                    "action": "ResetAim2",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         },
