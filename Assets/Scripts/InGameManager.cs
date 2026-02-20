@@ -18,6 +18,7 @@ public class InGameManager : MonoBehaviour, IBulletHittable
     bool bombShot = false;
     private InGameManager[] allPlayers;
     public SpriteChanger SpriteChanger;
+    public TargetSystem targetSystem;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void SetPlayerInput(PlayerInput input)
