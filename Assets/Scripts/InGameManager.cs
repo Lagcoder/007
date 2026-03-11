@@ -52,9 +52,9 @@ public class InGameManager : MonoBehaviour, IBulletHittable
         var StolenItem = targetManager.StolenProcess(gameObject);
         if (StolenItem != "Nothing" && itemCounts.ContainsKey(StolenItem))
         {
-            itemCounts[StolenItem] = 1;
+            itemCounts[StolenItem] += 1;
             Stolen = StolenItem;
-            Debug.Log($"{gameObject.name} stole {StolenItem} from {currentTargetObject.name}!");
+            Debug.Log($"{gameObject.name} stole {StolenItem} from {currentTargetObject.name} (now has {itemCounts[StolenItem]})!");
         }
         else
         {
@@ -108,7 +108,7 @@ public class InGameManager : MonoBehaviour, IBulletHittable
             {
                 try
                 {
-                    itemCounts[Stolen] = 0;
+                    itemCounts[Stolen] = Mathf.Max(0, itemCounts[Stolen] - 1);
                     Stolen = "None";
                 }
                 catch
@@ -179,7 +179,7 @@ public class InGameManager : MonoBehaviour, IBulletHittable
         {
             try
             {
-                itemCounts[Stolen] = 0;
+                itemCounts[Stolen] = Mathf.Max(0, itemCounts[Stolen] - 1);
                 Stolen = "None";
             }
             catch
