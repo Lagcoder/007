@@ -4,7 +4,6 @@ using System.Collections;
 public class RoundManager : MonoBehaviour
 {
     public float RoundTime = 5f;
-    private const string BulletTag = "Bullet";
     private InGameManager[] allPlayers;
     private bool postActionsProcessed = false;
 
@@ -32,9 +31,7 @@ public class RoundManager : MonoBehaviour
         float noBulletTimer = 0f;
         while (true)
         {
-            GameObject[] activeBullets = GameObject.FindGameObjectsWithTag(BulletTag);
-            
-            if (activeBullets.Length == 0)
+            if (BulletRegistry.ActiveCount == 0)
             {
                 noBulletTimer += Time.deltaTime;
 
