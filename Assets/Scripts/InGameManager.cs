@@ -38,53 +38,44 @@ public class InGameManager : MonoBehaviour, IBulletHittable
     }
     public void StealProcess()
     {
-        if (currentTargetObject == null)
-        {
-            Debug.LogError($"{gameObject.name} tried to steal but has no target.");
-            return;
-        }
         targetManager = currentTargetObject.GetComponentInChildren<InGameManager>();
-        if (targetManager == null)
-        {
-            Debug.LogError($"{gameObject.name} tried to steal but target has no InGameManager.");
-            return;
-        }
         var StolenItem = targetManager.StolenProcess(gameObject);
-        if (StolenItem != "Nothing" && itemCounts.ContainsKey(StolenItem))
-        {
+        try{
             itemCounts[StolenItem] = 1;
             Stolen = StolenItem;
-            Debug.Log($"{gameObject.name} stole {StolenItem} from {currentTargetObject.name}!");
         }
-        else
+        catch
         {
-            Debug.Log($"{gameObject.name} tried to steal from {currentTargetObject.name} but got nothing.");
+            Debug.LogError("Player stolen invalid item or other error");
         }
+
+
     }
     public string StolenProcess(GameObject sender)
     {
-        // Mutual steal: both players chose Steal and are targeting each other — cancel out
+        //working on
         if (processedAction == "Steal" && sender == currentTargetObject)
         {
+            //itemCounts = currentTargetObject.SwapItems()
             return "Nothing";
         }
-        // Can't steal from someone who is also stealing, using a weak/passive shield, reloading, or doing nothing
-        if (processedAction == "Steal" || processedAction == "WeakSH"
-            || processedAction == "Reload" || processedAction == "Nothing")
+        else if (processedAction == "Steal" || processedAction == "WeakSH")
         {
             return "Nothing";
         }
-        // Successfully steal the target's action
-        var currentItem = processedAction;
-        processedAction = "Nothing";
-        return currentItem;
+        else
+        {
+
+            var currentItem = processedAction;
+            processedAction = "Nothing";
+            return currentItem;
+
+        }
+            
+
     }
     public void PostAction()
     {
-        if (processedAction == "Steal")
-        {
-            StealProcess();
-        }
         if (processedAction == "Bomb")
         {
             if (bombShot)
