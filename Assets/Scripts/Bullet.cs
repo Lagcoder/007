@@ -17,6 +17,9 @@ public class Bullet : MonoBehaviour
         bulletType = type;
     }
 
+    void OnEnable() => BulletRegistry.Register(this);
+    void OnDisable() => BulletRegistry.Unregister(this);
+
     void Update()
     {
         if (target == null)
